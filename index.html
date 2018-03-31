@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script type="text/javascript " src="assets/app.js "></script>
+
+    <title>Train Scheduler</title>
+  </head>
+
+  <body>
+    
+    <h1 class="jumbotron container col-10 text-center mb-4 p-5" >🚂Train Scheduler</h1>
+    
+    <div class="container p-0 m-0">
+
+      <!-- time table-->
+      <div class="panel panel-default mb-4">
+        <div class="panel-heading">
+            <h3 class="panel-title">Current Train Schedule</h3>
+        </div>
+
+        <div class="panel-body">
+          <table class="table table-hover" style="margin-bottom: 0px">
+            <thead class="thead-default">
+                <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency (min)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                </tr>
+            </thead>
+            <tbody id="schedule_list"></tbody>
+          </table>
+        </div>
+      </div><!-- time table-->
+
+
+      <!-- schedule input-->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Add train</h3>
+        </div>
+
+
+        <div class="panel-body">
+          <div class="form-group">
+              <label for="train-name">Train Name:</label>
+              <input type="text" class="form-control" id="train-name">
+          </div>
+          <div class="form-group">
+              <label for="destination">Destination:</label>
+              <input type="text" class="form-control" id="destination">
+          </div>
+
+          <div class="row">
+            <div class="form-group col-sm-6">
+                <label for="train-time">First Train Time (HH:MM - Military Time)</label><br>
+                  <select class="form-control" id="train-time-hr" style="width: 30%; display: inline-block;"></select>
+                  <select class="form-control" id="train-time-min" style="width: 30%; display: inline-block;"></select>
+            </div>
+          
+            <div class="form-group col-sm-6">
+                <label for="frequency">Frequency (min):</label>
+                <input type="number" class="form-control" id="frequency">
+            </div>
+          </div>
+        
+          <button class="btn btn-secondary center-block " id="submit">Submit</button>
+        </div><!-- panel body-->
+
+      </div><!-- schedule input-->
+
+    </div> <!-- two tables-->
+
+
+    <footer>
+      <p class = "jumbotron container text-center col-10 p-3 mt-4">&copy; Copyright 2018 Jin</p>
+    </footer>  
+
+  </body>
+</html>
